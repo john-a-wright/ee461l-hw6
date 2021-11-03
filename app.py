@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 #CORS(app)
 
-
+@app.route("/")
+def index():
+    return "herro"
 
 @app.route('/<string:name>',methods=['GET'])
 def hello_world(name):  # put application's code here
