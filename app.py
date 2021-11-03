@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask.helpers import send_from_directory
 #from flask_cors import CORS
 
 app = Flask(__name__)
@@ -7,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "herro"
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/<string:name>',methods=['GET'])
 def hello_world(name):  # put application's code here
