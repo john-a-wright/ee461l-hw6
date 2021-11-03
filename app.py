@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return send_from_directory(app.static_folder, "index.html")
+    return send_from_directory("frontend/build", "index.html")
 
 @app.route('/<string:name>',methods=['GET'])
 def hello_world(name):  # put application's code here
