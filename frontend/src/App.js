@@ -1,10 +1,12 @@
 import "./App.css";
 import React from "react";
 
+// Holds the webpage frontend
 function App() {
   const [name, setName] = React.useState("");
   const [output, setOutput] = React.useState("");
 
+  // Function for handling button click
   const handleSubmit = () => {
     const url = "/" + name;
     console.log(url);
@@ -16,6 +18,7 @@ function App() {
       });
   };
 
+  // Returning JS for the formatting and display
   return (
     <div className="App">
       <header className="App-header">
