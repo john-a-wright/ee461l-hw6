@@ -6,7 +6,7 @@ function App() {
   const [output, setOutput] = React.useState("");
 
   const handleSubmit = () => {
-    const url = "/" + name; //const url = "http://127.0.0.1:5000/" + name; 
+    const url = "/" + name;
     console.log(url);
     fetch(url)
       .then((response) => response.json())
@@ -19,10 +19,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Enter first name</p>
+        <p>Please enter first name</p>
         <input onChange={(event) => setName(event.target.value)} />
         <button type="button" onClick={handleSubmit}>
-          Submit
+          Find last name
         </button>
         <p>{output}</p>
       </header>

@@ -7,11 +7,11 @@ app = Flask(__name__, static_folder="frontend/build", static_url_path="")
 #CORS(app)
 
 @app.route('/<string:name>',methods=['GET'])
-def hello_world(name):  # put application's code here
-    if name=='Ammar' or name=='ammar':
+def output_name(name):  # put application's code here
+    if name=='John':
         return jsonify(
             status=200,
-            message="Fatehi"
+            message="Wright"
         )
     else:
         return jsonify(
