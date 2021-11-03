@@ -2,13 +2,13 @@ from flask import Flask, jsonify
 from flask.helpers import send_from_directory
 #from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="frontend/build", static_url_path="")
 
 #CORS(app)
 
 @app.route("/")
 def index():
-    return send_from_directory("frontend/build", "index.html")
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/<string:name>',methods=['GET'])
 def hello_world(name):  # put application's code here
